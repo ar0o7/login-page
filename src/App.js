@@ -1,18 +1,19 @@
-
 import "./App.css";
-import Loginpage from "./components/login-page/Loginpage";
-import Landingpae from "./components/Landing-page/Landingpae";
+import LoginPage from "./components/login-page/Loginpage";
+import LandingPage from "./components/Landing-page/Landingpage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="">
-          <Loginpage />
-        </div>
-
-        
-      </header>
+      <div className="App-header">
+        <Router>
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/dashboard" element={<LandingPage />} />
+          </Routes>
+        </Router>
+      </div>
     </div>
   );
 }

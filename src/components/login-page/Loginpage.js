@@ -1,16 +1,24 @@
+/* eslint-disable */
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Form from "react-bootstrap/Form";
-import Landingpae from "../Landing-page/Landingpae";
-const Loginpage = () => {
+
+
+const LoginPage = () => {
   const [userName, setUserName] = useState("");
   const [passWord, setpassWord] = useState("");
+  const Navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (userName === "admin@xyz.com" && passWord === "admin") {
-      <Landingpae/>
+      Navigate('/dashboard');
+    } else if (userName !== "admin@xyz.com" && passWord === "admin") {
+      alert('Please Enter correct email');
+    } else if (userName === "admin@xyz.com" && passWord !== "admin") {
+      alert('Please Enter correct password');
     } else {
       alert("Try again with correct password");
     }
@@ -52,4 +60,4 @@ const Loginpage = () => {
   );
 };
 
-export default Loginpage;
+export default LoginPage;
