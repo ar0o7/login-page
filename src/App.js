@@ -1,13 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import Loginpage from './components/login-page/Loginpage';
+
+import "./App.css";
+import Loginpage from "./components/login-page/Loginpage";
+import Landingpae from "./components/Landing-page/Landingpae";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
-        <Loginpage/>
+        <div className="">
+          <Loginpage />
+        </div>
+
         
       </header>
     </div>
